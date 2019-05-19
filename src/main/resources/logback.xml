@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property file="/home/jitenderkumar/AirtelXLab/file-comparator/src/main/resources/log.properties"/>
+
+    <appender name="app_file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/home/jitenderkumar/logs/application.log</File>
+        <encoder>
+            <pattern>%d{YYYY-MM-dd HH:mm:ss.SSS} -APP- %X{apprequestid} [%t] %.-5level %logger{36}.%M-%L - %msg %n
+            </pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>/home/jitenderkumar/logs/application.log-%d{YYYY-MM-dd}.%i.gz
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- or whenever the file size reaches 100MB -->
+                <maxFileSize>1000000</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="com.example" additivity="false" level="ERROR">
+        <appender-ref ref="app_file"/>
+    </logger>
+
+</configuration>
