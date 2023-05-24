@@ -3,7 +3,7 @@ name: Hello World
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
     inputs:
       manual_trigger:
