@@ -8,8 +8,14 @@ on:
       - completed
 
 jobs:
-  first:
+  printing_star:
     runs-on: ubuntu-latest
     steps:
-      - name: Input Printing
+      - name: Printing Message
         run: echo "***************************Hello****************************"
+        
+  printing_inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Printing Inputs
+        run: echo " ${{ CALLER }} "
