@@ -6,3 +6,10 @@ on:
     workflows: ["Hello World"]
     types:
       - completed
+
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Input Printing
+        run: echo "***************************Hello****************************"
