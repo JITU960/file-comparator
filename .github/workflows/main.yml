@@ -16,3 +16,7 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello, world!"
+        
+  invoking-helper:
+    uses: JITU960/file-comparator/.github/workflows/input_accepting_workflow.yml@master
+    
